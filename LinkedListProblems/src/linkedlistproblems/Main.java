@@ -15,12 +15,28 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Node LinkedList = new Node(1);
-        LinkedList.appendToTail(2);
-        LinkedList.appendToTail(3);
-        LinkedList.appendToTail(4);
+        Node LinkedList = new Node(3);
+        Node c1 = new Node(7);
+        Node c2 = new Node(8);
+        Node c3 = new Node(9);
+        Node c4 = new Node(2);
+        Node c5 = new Node(1);
+        LinkedList.next = c1;
+        c1.next = c2;
+        c2.next = c3;
+        c3.next = c4;
+        c4.next = c5;
+        c5.next = LinkedList;
         
-        LinkedList.deleteNode(LinkedList, 3);
+
+        
+       //LinkedList = LinkedListFunctions.removeDuplicate(LinkedList);
+        LinkedList = LinkedListFunctions.beginingNode(LinkedList);
+          System.out.println(LinkedList.data);
+//        while(LinkedList.next != null){
+//            System.out.println(LinkedList.data);
+//            LinkedList = LinkedList.next;
+//        }
     }
-    
+
 }
